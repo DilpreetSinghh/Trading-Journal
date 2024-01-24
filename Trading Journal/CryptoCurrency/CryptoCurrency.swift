@@ -1,5 +1,5 @@
 //
-//  Option.swift
+//  CryptoCurrency.swift
 //  Trading Journal
 //
 //  Created by Dilpreet Singh on 24/01/24.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Option: View {
+struct CryptoCurrency: View {
     // MARK: - State Variables
     
     // Selected date and time
@@ -60,7 +60,7 @@ struct Option: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 20) {
+                LazyVStack(spacing: 20) {
                     
                     // MARK: - Date and Time Section
                     
@@ -145,7 +145,7 @@ struct Option: View {
                 }
                 .padding()
             }
-            .navigationTitle("Option")
+            .navigationTitle("Crypto Currency")
         }
     }
     
@@ -165,5 +165,5 @@ struct Option: View {
 }
 
 #Preview {
-    Option()
+    CryptoCurrency()
 }

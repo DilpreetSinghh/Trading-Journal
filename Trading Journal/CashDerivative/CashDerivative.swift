@@ -1,5 +1,5 @@
 //
-//  CryptoCurrency.swift
+//  CashDerivative.swift
 //  Trading Journal
 //
 //  Created by Dilpreet Singh on 24/01/24.
@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-struct CryptoCurrency: View {
+struct CashDerivative: View {
+    
     // MARK: - State Variables
     
     // Selected date and time
@@ -38,6 +39,15 @@ struct CryptoCurrency: View {
     @State private var CDB_NetProfit: String = ""
     @State private var CDI_NetProfit: String = ""
     
+    // Notes
+    @State private var notes: String = ""
+    
+    // Saved message
+    @State private var savedMessage: String = ""
+    
+    // Show saved notes
+    @State private var showingSavedNotes = false
+    
     // MARK: - Formatters
     
     // Date formatter for short date style
@@ -60,7 +70,7 @@ struct CryptoCurrency: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 20) {
+                LazyVStack(spacing: 20) {
                     
                     // MARK: - Date and Time Section
                     
@@ -142,10 +152,46 @@ struct CryptoCurrency: View {
                             TextField("Profit/ Loss", text: $CDI_NetProfit)
                         }))
                     }
+                    
+                    // Text editor for notes
+                    VStack(alignment: .leading) {
+                        Text("Notes:")
+                            .font(.headline)
+                        TextEditor(text: $notes)
+                            .background(Color.gray.opacity(0.1))
+                            .cornerRadius(8.0)
+                            .frame(minHeight: 100)
+                    }
+                    
+                    // Save button
+                    Button("Save") {
+                        saveData()
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(8.0)
+                    
+                    // Show saved notes button
+                    Button("Show Saved Notes") {
+                        showingSavedNotes = true
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.green)
+                    .cornerRadius(8.0)
+                    .sheet(isPresented: $showingSavedNotes) {
+                        SavedNotesView()
+                    }
+                    
+                    // Display saved message
+                    Text(savedMessage)
+                        .foregroundColor(.green)
+                        .padding()
                 }
                 .padding()
             }
-            .navigationTitle("Crypto Currency")
+            .navigationTitle("Cash Derivative")
         }
     }
     
@@ -162,8 +208,17 @@ struct CryptoCurrency: View {
             Divider().background(Color.gray)
         }
     }
+    
+    // MARK: - Save Data Function
+    
+    private func saveData() {
+        // Perform the data saving logic here using Swift data storage
+        // For demonstration purposes, let's just display a saved message
+        savedMessage = "Data Saved!"
+    }
 }
 
+
 #Preview {
-    CryptoCurrency()
+    CashDerivative()
 }

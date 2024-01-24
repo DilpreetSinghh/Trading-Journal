@@ -1,5 +1,5 @@
 //
-//  CashDerivative.swift
+//  Future.swift
 //  Trading Journal
 //
 //  Created by Dilpreet Singh on 24/01/24.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CashDerivative: View {
+struct Future: View {
     
     // MARK: - State Variables
     
@@ -61,7 +61,7 @@ struct CashDerivative: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 20) {
+                LazyVStack(spacing: 20) {
                     
                     // MARK: - Date and Time Section
                     
@@ -146,7 +146,7 @@ struct CashDerivative: View {
                 }
                 .padding()
             }
-            .navigationTitle("Cash Derivative")
+            .navigationTitle("Future")
         }
     }
     
@@ -168,5 +168,5 @@ struct CashDerivative: View {
 // MARK: - Preview
 
 #Preview {
-        CashDerivative()
+        Future()
 }
