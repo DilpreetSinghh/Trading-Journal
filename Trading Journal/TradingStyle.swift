@@ -25,25 +25,33 @@ struct TradingStyle: View {
                     } label: {
                         Image(systemName: "c.circle.fill")
                         Text("Cash Derivative")
+                            
                     }
+                    .foregroundStyle(Color.green)
+                    
                     NavigationLink {
                         Future()
                     } label: {
                         Image(systemName: "f.circle.fill")
                         Text("Future")
                     }
-                    NavigationLink {
-                        CryptoCurrency()
-                    } label: {
-                        Image(systemName: "x.circle.fill")
-                        Text("CryptoCurrency")
-                    }
+                    .foregroundStyle(Color.blue)
+                    
                     NavigationLink {
                         Option()
                     } label: {
                         Image(systemName: "o.circle.fill")
                         Text("Option")
                     }
+                    .foregroundStyle(Color.orange)
+                    
+                    NavigationLink {
+                        CryptoCurrency()
+                    } label: {
+                        Image(systemName: "x.circle.fill")
+                        Text("CryptoCurrency")
+                    }
+                    .foregroundStyle(Color.red)
                 }
                 
                 Section("Swing or Long Term".capitalized) {
@@ -52,25 +60,34 @@ struct TradingStyle: View {
                     } label: {
                         Image(systemName: "c.circle.fill")
                         Text("Cash Derivative")
+                            
                     }
+                    .foregroundStyle(Color.green)
+                    
                     NavigationLink {
                         Future()
                     } label: {
                         Image(systemName: "f.circle.fill")
                         Text("Future")
                     }
-                    NavigationLink {
-                        CryptoCurrency()
-                    } label: {
-                        Image(systemName: "x.circle.fill")
-                        Text("CryptoCurrency")
-                    }
+                    .foregroundStyle(Color.blue)
+                    
                     NavigationLink {
                         Option()
                     } label: {
                         Image(systemName: "o.circle.fill")
                         Text("Option")
                     }
+                    .foregroundStyle(Color.orange)
+                    
+                    NavigationLink {
+                        CryptoCurrency()
+                    } label: {
+                        Image(systemName: "x.circle.fill")
+                        Text("CryptoCurrency")
+                    }
+                    .foregroundStyle(Color.red)
+                    
                 }
             }
             .navigationTitle("Trading Style")

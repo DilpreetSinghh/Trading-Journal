@@ -109,12 +109,12 @@ struct Future: View {
                         // Trading type, buy and sell price, stop loss, quantity, and net profit/loss for both Before (B) and After (A)
                         row(view: AnyView(HStack {
                             Text("Type")
-                            TextField("Buy/Sell", text: $CDB_TradingType)
-                            TextField("Buy/Sell", text: $CDI_TradingType)
+                            TextField("Put/Call", text: $CDB_TradingType)
+                            TextField("Put/Call", text: $CDI_TradingType)
                         }))
                         
                         row(view: AnyView(HStack {
-                            Text("Buy  ")
+                            Text("Buy   ")
                             TextField("Buy Price", text: $CDB_BuyPrice)
                             TextField("Buy Price", text: $CDI_BuyPrice)
                         }))

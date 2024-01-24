@@ -1,10 +1,3 @@
-//
-//  SavedNotesView.swift
-//  Trading Journal
-//
-//  Created by Dilpreet Singh on 24/01/24.
-//  Copyright © 2024 Dilpreet Singh. All rights reserved.
-//
 import SwiftUI
 
 struct SavedNotesView: View {
@@ -37,15 +30,13 @@ struct SavedNotesView: View {
 
     private func loadSavedNotes() {
         do {
-            if let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                // Get a list of all files in the document directory
-                let fileURLs = try FileManager.default.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil)
+            if let encodedData = UserDefaults.standard.data(forKey: "cashDerivativeData") {
+                // Decode the saved data
+                let decoder = JSONDecoder()
+                let cashDerivativeData = try decoder.decode(CashDerivativeData.self, from: encodedData)
 
-                // Find the latest file based on modification date
-                if let latestFile = fileURLs.max(by: { $0.lastPathComponent < $1.lastPathComponent }) {
-                    // Read the contents of the file into a string
-                    savedNotes = try String(contentsOf: latestFile, encoding: .utf8)
-                }
+                // Access the notes property from the decoded data
+                savedNotes = cashDerivativeData.notes
             }
         } catch {
             print("Error loading saved notes: \(error.localizedDescription)")
@@ -53,7 +44,8 @@ struct SavedNotesView: View {
     }
 }
 
-
-#Preview {
-    SavedNotesView()
+struct SavedNotesView_Previews: PreviewProvider {
+    static var previews: some View {
+        SavedNotesView()
+    }
 }
