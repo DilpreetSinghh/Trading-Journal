@@ -53,10 +53,10 @@ struct CashDerivative: View {
     )
     
     // Show saved notes
-    @State private var showingSavedNotes = false
+    @State private var showingCDSavedNotes = false
     
     // Saved message
-    @State private var savedMessage = ""
+    @State private var cdsavedMessage = ""
     
     // MARK: - Body
     
@@ -157,7 +157,7 @@ struct CashDerivative: View {
                     
                     // Save button
                     Button("Save") {
-                        saveData()
+                        cdsaveData()
                     }
                     .padding()
                     .foregroundColor(.white)
@@ -166,31 +166,34 @@ struct CashDerivative: View {
                     
                     // Show saved notes button
                     Button("Show Saved Notes") {
-                        showingSavedNotes = true
+                        showingCDSavedNotes = true
                     }
                     .padding()
                     .foregroundColor(.white)
                     .background(Color.green)
                     .cornerRadius(8.0)
-                    .sheet(isPresented: $showingSavedNotes) {
-                        SavedNotesView()
+                    .sheet(isPresented: $showingCDSavedNotes) {
+                        CDSavedNotes()
                     }
                     
                     // Display saved message
-                    Text(savedMessage)
+                    Text(cdsavedMessage)
                         .foregroundColor(.green)
                         .padding()
                 }
                 .padding()
             }
-            .navigationTitle("Cash Derivative")
-            NavigationLink("Show Saved Notes", destination: SavedNotesView())
+            .navigationTitle(
+                Text("Cash Derivative")
+            )
+            
+            NavigationLink("Show Saved Notes", destination: CDSavedNotes())
                 .padding()
                 .foregroundColor(.white)
                 .background(Color.green)
                 .cornerRadius(8.0)
-            .sheet(isPresented: $showingSavedNotes) {
-                        SavedNotesView()
+            .sheet(isPresented: $showingCDSavedNotes) {
+                        CDSavedNotes()
                     }
 
 
@@ -213,14 +216,14 @@ struct CashDerivative: View {
     
     // MARK: - Save Data Function
     
-    func saveData() {
+    func cdsaveData() {
         // Save the data model to UserDefaults
         let encoder = JSONEncoder()
         if let encodedData = try? encoder.encode(cashDerivativeData) {
             UserDefaults.standard.set(encodedData, forKey: "cashDerivativeData")
-            savedMessage = "Data Saved!"
+            cdsavedMessage = "Data Saved!"
         } else {
-            savedMessage = "Failed to save data."
+            cdsavedMessage = "Failed to save data."
         }
     }
     
@@ -235,15 +238,9 @@ struct CashDerivative: View {
             print("Error loading saved notes: \(error.localizedDescription)")
         }
         
-    }
-    
-    
+    }   
     
 }
-
-
-
-
 
 #Preview {
     CashDerivative()
