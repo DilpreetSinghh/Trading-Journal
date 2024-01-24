@@ -7,22 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7DD4532A2B4AEA6A004D3AD0 /* Trading_JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD453292B4AEA6A004D3AD0 /* Trading_JournalApp.swift */; };
-		7DD4532C2B4AEA6A004D3AD0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD4532B2B4AEA6A004D3AD0 /* ContentView.swift */; };
+		7D7BE5D82B60F0F500EF0AB8 /* CashDerivative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5D72B60F0F500EF0AB8 /* CashDerivative.swift */; };
+		7D7BE5DA2B60F11200EF0AB8 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5D92B60F11200EF0AB8 /* Future.swift */; };
+		7D7BE5DC2B60F41300EF0AB8 /* CryptoCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */; };
+		7D7BE5DE2B60F43300EF0AB8 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5DD2B60F43300EF0AB8 /* Option.swift */; };
+		7DD4532A2B4AEA6A004D3AD0 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD453292B4AEA6A004D3AD0 /* Main.swift */; };
+		7DD4532C2B4AEA6A004D3AD0 /* TradingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */; };
 		7DD4532E2B4AEA6B004D3AD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */; };
 		7DD453312B4AEA6B004D3AD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD453302B4AEA6B004D3AD0 /* Preview Assets.xcassets */; };
 		7DD453382B4AEDB0004D3AD0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD453372B4AEDB0004D3AD0 /* Launch Screen.storyboard */; };
-		7DD4533A2B4AF8DF004D3AD0 /* Trading Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD453392B4AF8DF004D3AD0 /* Trading Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D7BE5D72B60F0F500EF0AB8 /* CashDerivative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashDerivative.swift; sourceTree = "<group>"; };
+		7D7BE5D92B60F11200EF0AB8 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
+		7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrency.swift; sourceTree = "<group>"; };
+		7D7BE5DD2B60F43300EF0AB8 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		7DD453262B4AEA6A004D3AD0 /* Trading Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trading Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DD453292B4AEA6A004D3AD0 /* Trading_JournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trading_JournalApp.swift; sourceTree = "<group>"; };
-		7DD4532B2B4AEA6A004D3AD0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7DD453292B4AEA6A004D3AD0 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingStyle.swift; sourceTree = "<group>"; };
 		7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DD453302B4AEA6B004D3AD0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7DD453372B4AEDB0004D3AD0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		7DD453392B4AF8DF004D3AD0 /* Trading Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trading Style.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,9 +61,12 @@
 		7DD453282B4AEA6A004D3AD0 /* Trading Journal */ = {
 			isa = PBXGroup;
 			children = (
-				7DD453392B4AF8DF004D3AD0 /* Trading Style.swift */,
-				7DD453292B4AEA6A004D3AD0 /* Trading_JournalApp.swift */,
-				7DD4532B2B4AEA6A004D3AD0 /* ContentView.swift */,
+				7DD453292B4AEA6A004D3AD0 /* Main.swift */,
+				7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */,
+				7D7BE5D72B60F0F500EF0AB8 /* CashDerivative.swift */,
+				7D7BE5D92B60F11200EF0AB8 /* Future.swift */,
+				7D7BE5DD2B60F43300EF0AB8 /* Option.swift */,
+				7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */,
 				7DD453372B4AEDB0004D3AD0 /* Launch Screen.storyboard */,
 				7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */,
 				7DD4532F2B4AEA6B004D3AD0 /* Preview Content */,
@@ -145,9 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DD4533A2B4AF8DF004D3AD0 /* Trading Style.swift in Sources */,
-				7DD4532C2B4AEA6A004D3AD0 /* ContentView.swift in Sources */,
-				7DD4532A2B4AEA6A004D3AD0 /* Trading_JournalApp.swift in Sources */,
+				7D7BE5D82B60F0F500EF0AB8 /* CashDerivative.swift in Sources */,
+				7D7BE5DA2B60F11200EF0AB8 /* Future.swift in Sources */,
+				7DD4532C2B4AEA6A004D3AD0 /* TradingStyle.swift in Sources */,
+				7D7BE5DC2B60F41300EF0AB8 /* CryptoCurrency.swift in Sources */,
+				7D7BE5DE2B60F43300EF0AB8 /* Option.swift in Sources */,
+				7DD4532A2B4AEA6A004D3AD0 /* Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

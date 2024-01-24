@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct Trading_JournalApp: App {
+struct Main: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TradingStyle()
         }
     }
 }
