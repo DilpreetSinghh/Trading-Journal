@@ -13,45 +13,45 @@ struct CashDerivative: View {
     // MARK: - State Variables
     
     // Selected date and time
-    @State private var selectedDate = Date()
-    @State private var selectedTime = Date()
-    
+    @State  var selectedDate = Date()
+    @State  var selectedTime = Date()
+
     // Symbol and trading type for Before (B) and After (A)
-    @State private var CDSymbol: String = ""
-    @State private var CDB_TradingType: String = ""
-    @State private var CDI_TradingType: String = ""
+    @State  var CDSymbol: String = ""
+    @State var CDB_TradingType: String = ""
+    @State  var CDI_TradingType: String = ""
     
     // Buy and sell prices for Before (B) and After (A)
-    @State private var CDB_BuyPrice: String = ""
-    @State private var CDI_BuyPrice: String = ""
-    @State private var CDB_SellPrice: String = ""
-    @State private var CDI_SellPrice: String = ""
+    @State var CDB_BuyPrice: String = ""
+    @State var CDI_BuyPrice: String = ""
+    @State var CDB_SellPrice: String = ""
+    @State var CDI_SellPrice: String = ""
     
     // Stop loss for Before (B) and After (A)
-    @State private var CDB_StopLoss: String = ""
-    @State private var CDI_StopLoss: String = ""
+    @State var CDB_StopLoss: String = ""
+    @State var CDI_StopLoss: String = ""
     
     // Quantity for Before (B) and After (A)
-    @State private var CDB_Qty: String = ""
-    @State private var CDI_Qty: String = ""
+    @State var CDB_Qty: String = ""
+    @State var CDI_Qty: String = ""
     
     // Net profit/loss for Before (B) and After (A)
-    @State private var CDB_NetProfit: String = ""
-    @State private var CDI_NetProfit: String = ""
+    @State var CDB_NetProfit: String = ""
+    @State var CDI_NetProfit: String = ""
     
     // Notes
-    @State private var notes: String = ""
+    @State var notes: String = ""
     
     // Saved message
-    @State private var savedMessage: String = ""
+    @State var savedMessage: String = ""
     
     // Show saved notes
-    @State private var showingSavedNotes = false
+    @State var showingSavedNotes = false
     
     // MARK: - Formatters
     
     // Date formatter for short date style
-    private let dateFormatter: DateFormatter = {
+    let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .none
@@ -59,7 +59,7 @@ struct CashDerivative: View {
     }()
     
     // Time formatter for 24-hour format
-    private let timeFormatter: DateFormatter = {
+    let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         return formatter
@@ -95,7 +95,6 @@ struct CashDerivative: View {
                     }
                     
                     // MARK: - Trading Details Section
-                    
                     Group {
                         // Horizontal stack for displaying "Before" and "After" labels
                         row(view: AnyView(HStack {
@@ -153,6 +152,7 @@ struct CashDerivative: View {
                         }))
                     }
                     
+                    
                     // Text editor for notes
                     VStack(alignment: .leading) {
                         Text("Notes:")
@@ -198,7 +198,7 @@ struct CashDerivative: View {
     // MARK: - Row Function
     
     // Custom row function for creating consistent layout
-    private func row<Content: View>(view: Content) -> some View {
+    func row<Content: View>(view: Content) -> some View {
         VStack {
             HStack {
                 Spacer()
@@ -211,7 +211,7 @@ struct CashDerivative: View {
     
     // MARK: - Save Data Function
     
-    private func saveData() {
+    func saveData() {
         // Perform the data saving logic here using Swift data storage
         // For demonstration purposes, let's just display a saved message
         savedMessage = "Data Saved!"

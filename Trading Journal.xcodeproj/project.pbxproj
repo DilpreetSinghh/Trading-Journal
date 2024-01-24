@@ -11,6 +11,7 @@
 		7D7BE5DA2B60F11200EF0AB8 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5D92B60F11200EF0AB8 /* Future.swift */; };
 		7D7BE5DC2B60F41300EF0AB8 /* CryptoCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */; };
 		7D7BE5DE2B60F43300EF0AB8 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5DD2B60F43300EF0AB8 /* Option.swift */; };
+		7D7BE5E52B6131AA00EF0AB8 /* SavedNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5E42B6131AA00EF0AB8 /* SavedNotesView.swift */; };
 		7DD4532A2B4AEA6A004D3AD0 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD453292B4AEA6A004D3AD0 /* Main.swift */; };
 		7DD4532C2B4AEA6A004D3AD0 /* TradingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */; };
 		7DD4532E2B4AEA6B004D3AD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		7D7BE5D92B60F11200EF0AB8 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
 		7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrency.swift; sourceTree = "<group>"; };
 		7D7BE5DD2B60F43300EF0AB8 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		7D7BE5E42B6131AA00EF0AB8 /* SavedNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedNotesView.swift; sourceTree = "<group>"; };
 		7DD453262B4AEA6A004D3AD0 /* Trading Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trading Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD453292B4AEA6A004D3AD0 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingStyle.swift; sourceTree = "<group>"; };
@@ -42,6 +44,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D7BE5E62B613C0100EF0AB8 /* CashDerivative */ = {
+			isa = PBXGroup;
+			children = (
+				7D7BE5D72B60F0F500EF0AB8 /* CashDerivative.swift */,
+				7D7BE5E42B6131AA00EF0AB8 /* SavedNotesView.swift */,
+			);
+			path = CashDerivative;
+			sourceTree = "<group>";
+		};
+		7D7BE5E72B613C1500EF0AB8 /* Future */ = {
+			isa = PBXGroup;
+			children = (
+				7D7BE5D92B60F11200EF0AB8 /* Future.swift */,
+			);
+			path = Future;
+			sourceTree = "<group>";
+		};
+		7D7BE5E82B613C1F00EF0AB8 /* Option */ = {
+			isa = PBXGroup;
+			children = (
+				7D7BE5DD2B60F43300EF0AB8 /* Option.swift */,
+			);
+			path = Option;
+			sourceTree = "<group>";
+		};
+		7D7BE5E92B613C2800EF0AB8 /* CryptoCurrency */ = {
+			isa = PBXGroup;
+			children = (
+				7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */,
+			);
+			path = CryptoCurrency;
+			sourceTree = "<group>";
+		};
 		7DD4531D2B4AEA6A004D3AD0 = {
 			isa = PBXGroup;
 			children = (
@@ -63,10 +98,10 @@
 			children = (
 				7DD453292B4AEA6A004D3AD0 /* Main.swift */,
 				7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */,
-				7D7BE5D72B60F0F500EF0AB8 /* CashDerivative.swift */,
-				7D7BE5D92B60F11200EF0AB8 /* Future.swift */,
-				7D7BE5DD2B60F43300EF0AB8 /* Option.swift */,
-				7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */,
+				7D7BE5E62B613C0100EF0AB8 /* CashDerivative */,
+				7D7BE5E72B613C1500EF0AB8 /* Future */,
+				7D7BE5E82B613C1F00EF0AB8 /* Option */,
+				7D7BE5E92B613C2800EF0AB8 /* CryptoCurrency */,
 				7DD453372B4AEDB0004D3AD0 /* Launch Screen.storyboard */,
 				7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */,
 				7DD4532F2B4AEA6B004D3AD0 /* Preview Content */,
@@ -155,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D7BE5D82B60F0F500EF0AB8 /* CashDerivative.swift in Sources */,
+				7D7BE5E52B6131AA00EF0AB8 /* SavedNotesView.swift in Sources */,
 				7D7BE5DA2B60F11200EF0AB8 /* Future.swift in Sources */,
 				7DD4532C2B4AEA6A004D3AD0 /* TradingStyle.swift in Sources */,
 				7D7BE5DC2B60F41300EF0AB8 /* CryptoCurrency.swift in Sources */,
