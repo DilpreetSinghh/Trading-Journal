@@ -1,91 +1,75 @@
-//
-//  CDSavedNotes.swift
-//  Trading Journal
-//
-//  Created by Dilpreet Singh on 20/01/24.
-//  Copyright © 2024 Dilpreet Singh. All rights reserved.
-//
-
+// CDSavedNotes.swift
 import SwiftUI
 
 struct CDSavedNotes: View {
+    @State private var savedNotes: String?
+    
+    static let dateFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            formatter.timeStyle = .none
+            return formatter
+        }()
 
-    @State private var savedData: CashDerivativeData?
+        // Time formatter for 24-hour format
+        static let timeFormatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:mm"
+            return formatter
+        }()
 
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    if let data = savedData {
-                        // Display saved details
-                        Text("Recently Saved Data:")
+                    if let notes = savedNotes {
+                        Text("Recently Saved Notes:")
                             .font(.headline)
-
-                        // Display selected date and time
-                        Text("Selected Date: \(data.selectedDate, formatter: dateFormatter)")
-                        Text("Selected Time: \(data.selectedTime, formatter: timeFormatter)")
-
-                        // Display trading details
-                        Text("Symbol: \(data.CDSymbol)")
-                        Text("Buy/Sell (Before): \(data.CDB_TradingType)")
-                        Text("Buy/Sell (After): \(data.CDI_TradingType)")
-                        Text("Buy Price (Before): \(data.CDB_BuyPrice)")
-                        Text("Buy Price (After): \(data.CDI_BuyPrice)")
-                        Text("Sell Price (Before): \(data.CDB_SellPrice)")
-                        Text("Sell Price (After): \(data.CDI_SellPrice)")
-                        Text("Stop Loss (Before): \(data.CDB_StopLoss)")
-                        Text("Stop Loss (After): \(data.CDI_StopLoss)")
-                        Text("Quantity (Before): \(data.CDB_Qty)")
-                        Text("Quantity (After): \(data.CDI_Qty)")
-                        Text("Net Profit/Loss (Before): \(data.CDB_NetProfit)")
-                        Text("Net Profit/Loss (After): \(data.CDI_NetProfit)")
-
-                        // Display notes
-                        Text("Notes:")
-                        Text(data.notes)
+                        Text(notes)
                             .padding()
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(8.0)
                     } else {
-                        Text("No saved data available.")
+                        Text("No saved notes available.")
                     }
                 }
                 .padding()
             }
-            .navigationTitle("Saved Data")
+            .navigationTitle("Saved Notes")
             .onAppear {
-                loadSavedData()
+                loadSavedNotes()
             }
         }
     }
 
-    private func loadSavedData() {
+    private func loadSavedNotes() {
         do {
             if let encodedData = UserDefaults.standard.data(forKey: "cashDerivativeData") {
                 let decoder = JSONDecoder()
-                savedData = try decoder.decode(CashDerivativeData.self, from: encodedData)
+                let cashDerivativeData = try decoder.decode(CashDerivativeData.self, from: encodedData)
+
+                // Build a string with all the details
+                savedNotes = """
+                Date: \(cashDerivativeData.selectedDate)
+                Time: \(cashDerivativeData.selectedTime)
+                Symbol: \(cashDerivativeData.CDSymbol)
+                CDB Trading Type: \(cashDerivativeData.CDB_TradingType)
+                CDI Trading Type: \(cashDerivativeData.CDI_TradingType)
+                CDB Buy Price: \(cashDerivativeData.CDB_BuyPrice)
+                CDI Buy Price: \(cashDerivativeData.CDI_BuyPrice)
+                CDB Sell Price: \(cashDerivativeData.CDB_SellPrice)
+                CDI Sell Price: \(cashDerivativeData.CDI_SellPrice)
+                CDB Stop Loss: \(cashDerivativeData.CDB_StopLoss)
+                CDI Stop Loss: \(cashDerivativeData.CDI_StopLoss)
+                CDB Quantity: \(cashDerivativeData.CDB_Qty)
+                CDI Quantity: \(cashDerivativeData.CDI_Qty)
+                CDB Net Profit: \(cashDerivativeData.CDB_NetProfit)
+                CDI Net Profit: \(cashDerivativeData.CDI_NetProfit)
+                Notes: \(cashDerivativeData.notes)
+                """
             }
         } catch {
-            print("Error loading saved data: \(error.localizedDescription)")
+            print("Error loading saved notes: \(error.localizedDescription)")
         }
     }
-
-    // Date formatter for short date style
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        return formatter
-    }()
-
-    // Time formatter for 24-hour format
-    let timeFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter
-    }()
-}
-
-#Preview {
-    CDSavedNotes()
 }
