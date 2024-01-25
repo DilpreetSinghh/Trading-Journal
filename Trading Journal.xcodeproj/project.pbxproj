@@ -15,6 +15,7 @@
 		7D7BE5EF2B61745D00EF0AB8 /* FSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5EE2B61745D00EF0AB8 /* FSavedNotes.swift */; };
 		7D7BE5F12B61746F00EF0AB8 /* OSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5F02B61746F00EF0AB8 /* OSavedNotes.swift */; };
 		7D7BE5F32B61747D00EF0AB8 /* CCSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5F22B61747D00EF0AB8 /* CCSavedNotes.swift */; };
+		7DC0765A2B624F090004A095 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7DC076592B624F090004A095 /* Documentation.docc */; };
 		7DD4532A2B4AEA6A004D3AD0 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD453292B4AEA6A004D3AD0 /* Main.swift */; };
 		7DD4532C2B4AEA6A004D3AD0 /* TradingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */; };
 		7DD4532E2B4AEA6B004D3AD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		7D7BE5EE2B61745D00EF0AB8 /* FSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSavedNotes.swift; sourceTree = "<group>"; };
 		7D7BE5F02B61746F00EF0AB8 /* OSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSavedNotes.swift; sourceTree = "<group>"; };
 		7D7BE5F22B61747D00EF0AB8 /* CCSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSavedNotes.swift; sourceTree = "<group>"; };
+		7DC076592B624F090004A095 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		7DD453262B4AEA6A004D3AD0 /* Trading Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trading Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DD453292B4AEA6A004D3AD0 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingStyle.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				7DD453372B4AEDB0004D3AD0 /* Launch Screen.storyboard */,
 				7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */,
 				7DD4532F2B4AEA6B004D3AD0 /* Preview Content */,
+				7DC076592B624F090004A095 /* Documentation.docc */,
 			);
 			path = "Trading Journal";
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				7D7BE5D82B60F0F500EF0AB8 /* CashDerivative.swift in Sources */,
 				7D7BE5E52B6131AA00EF0AB8 /* CDSavedNotes.swift in Sources */,
+				7DC0765A2B624F090004A095 /* Documentation.docc in Sources */,
 				7D7BE5DA2B60F11200EF0AB8 /* Future.swift in Sources */,
 				7D7BE5F32B61747D00EF0AB8 /* CCSavedNotes.swift in Sources */,
 				7DD4532C2B4AEA6A004D3AD0 /* TradingStyle.swift in Sources */,
