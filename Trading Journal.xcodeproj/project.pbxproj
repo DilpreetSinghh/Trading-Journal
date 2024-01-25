@@ -91,6 +91,7 @@
 		7DD4531D2B4AEA6A004D3AD0 = {
 			isa = PBXGroup;
 			children = (
+				7DC076592B624F090004A095 /* Documentation.docc */,
 				7DD453282B4AEA6A004D3AD0 /* Trading Journal */,
 				7DD453272B4AEA6A004D3AD0 /* Products */,
 			);
@@ -116,7 +117,6 @@
 				7DD453372B4AEDB0004D3AD0 /* Launch Screen.storyboard */,
 				7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */,
 				7DD4532F2B4AEA6B004D3AD0 /* Preview Content */,
-				7DC076592B624F090004A095 /* Documentation.docc */,
 			);
 			path = "Trading Journal";
 			sourceTree = "<group>";
