@@ -1,5 +1,7 @@
 # Trading-Journal
 
+### Introduction
+
 Amar and I am a trader myself. We have a very good idea what a new or even expert trader have issue while work.
 
 First one the remembering the trading decision while on desk (trading hours)
