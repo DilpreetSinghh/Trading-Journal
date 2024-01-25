@@ -217,12 +217,34 @@ struct CashDerivative: View {
     // MARK: - Save Data Function
     
     func cdsaveData() {
+        // Save the data from text fields to the model
+        cashDerivativeData.CDSymbol = cashDerivativeData.CDSymbol
+        cashDerivativeData.CDB_TradingType = cashDerivativeData.CDB_TradingType
+        cashDerivativeData.CDI_TradingType = cashDerivativeData.CDI_TradingType
+        cashDerivativeData.CDB_BuyPrice = cashDerivativeData.CDB_BuyPrice
+        cashDerivativeData.CDI_BuyPrice = cashDerivativeData.CDI_BuyPrice
+        cashDerivativeData.CDB_SellPrice = cashDerivativeData.CDB_SellPrice
+        cashDerivativeData.CDI_SellPrice = cashDerivativeData.CDI_SellPrice
+        cashDerivativeData.CDB_StopLoss = cashDerivativeData.CDB_StopLoss
+        cashDerivativeData.CDI_StopLoss = cashDerivativeData.CDI_StopLoss
+        cashDerivativeData.CDB_Qty = cashDerivativeData.CDB_Qty
+        cashDerivativeData.CDI_Qty = cashDerivativeData.CDI_Qty
+        cashDerivativeData.CDB_NetProfit = cashDerivativeData.CDB_NetProfit
+        cashDerivativeData.CDI_NetProfit = cashDerivativeData.CDI_NetProfit
+        cashDerivativeData.notes = cashDerivativeData.notes
+
+        // Save the date and time
+        cashDerivativeData.selectedDate = cashDerivativeData.selectedDate
+        cashDerivativeData.selectedTime = cashDerivativeData.selectedTime
+
         // Save the data model to UserDefaults
-        let encoder = JSONEncoder()
-        if let encodedData = try? encoder.encode(cashDerivativeData) {
+        do {
+            let encoder = JSONEncoder()
+            let encodedData = try encoder.encode(cashDerivativeData)
             UserDefaults.standard.set(encodedData, forKey: "cashDerivativeData")
             cdsavedMessage = "Data Saved!"
-        } else {
+        } catch {
+            print("Error encoding data: \(error.localizedDescription)")
             cdsavedMessage = "Failed to save data."
         }
     }

@@ -6,14 +6,6 @@
 //
 
 import SwiftUI
-    
-    
-
-//                .init(name: "Intraday", imageName: "i.circle.fill", color: .orange),
-//                .init(name: "F&O", imageName: "f.circle.fill", color: .blue),
-//                .init(name: "Long Term Investment", imageName: "l.circle.fill", color: .brown),
-//                .init(name: "Forex Currency", imageName: "f.circle.fill", color: .green),
-//                .init(name: "Cryto", imageName: "c.circle.fill", color: .red)]
 
 struct TradingStyle: View {
     var body: some View {
