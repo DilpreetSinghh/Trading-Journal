@@ -72,11 +72,8 @@ struct CashDerivative: View {
                         row(view: AnyView(DatePicker("Date", selection: $cashDerivativeData.selectedDate, in: ...Date(), displayedComponents: .date)))
                         
                         // Time picker for selecting a time
-                        Text("Time of Trade")
-                            .font(.headline)
-                            .padding(.vertical, 5)
-                        row(view: AnyView(DatePicker("", selection: $cashDerivativeData.selectedTime, in: ...Date(), displayedComponents: .hourAndMinute)
-                            .datePickerStyle(WheelDatePickerStyle())))
+                        row(view: AnyView(DatePicker("Time of Trade", selection: $cashDerivativeData.selectedTime, displayedComponents: .hourAndMinute)
+                            ))
                         
                         // Text field for typing the symbol
                         row(view: AnyView(HStack {
