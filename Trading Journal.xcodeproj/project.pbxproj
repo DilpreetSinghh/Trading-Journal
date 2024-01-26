@@ -7,35 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D7BE5D82B60F0F500EF0AB8 /* CashDerivative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5D72B60F0F500EF0AB8 /* CashDerivative.swift */; };
-		7D7BE5DA2B60F11200EF0AB8 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5D92B60F11200EF0AB8 /* Future.swift */; };
-		7D7BE5DC2B60F41300EF0AB8 /* CryptoCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */; };
-		7D7BE5DE2B60F43300EF0AB8 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5DD2B60F43300EF0AB8 /* Option.swift */; };
-		7D7BE5E52B6131AA00EF0AB8 /* CDSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5E42B6131AA00EF0AB8 /* CDSavedNotes.swift */; };
-		7D7BE5EF2B61745D00EF0AB8 /* FSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5EE2B61745D00EF0AB8 /* FSavedNotes.swift */; };
-		7D7BE5F12B61746F00EF0AB8 /* OSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5F02B61746F00EF0AB8 /* OSavedNotes.swift */; };
-		7D7BE5F32B61747D00EF0AB8 /* CCSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5F22B61747D00EF0AB8 /* CCSavedNotes.swift */; };
+		7DA071FD2B642B580035772B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA071FB2B642B530035772B /* CoreData.framework */; };
+		7DA071FE2B642B580035772B /* CoreData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA071FB2B642B530035772B /* CoreData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7DA072142B643B650035772B /* TraderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA072132B643B650035772B /* TraderApp.swift */; };
+		7DA072162B643BB00035772B /* TradeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA072152B643BB00035772B /* TradeDetailView.swift */; };
+		7DA0721B2B643D8F0035772B /* .xcdatamodeld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DA072192B643D8F0035772B /* .xcdatamodeld.xcdatamodeld */; };
+		7DA0721D2B643DEE0035772B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0721C2B643DEE0035772B /* CoreDataManager.swift */; };
+		7DA0721F2B643FFD0035772B /* UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA0721E2B643FFD0035772B /* UIImagePicker.swift */; };
+		7DA072212B6442600035772B /* PriceChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA072202B6442600035772B /* PriceChartView.swift */; };
+		7DA072232B6442CD0035772B /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA072222B6442CD0035772B /* UNUserNotificationCenter.swift */; };
+		7DA072262B6448030035772B /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 7DA072252B6448030035772B /* SwiftUICharts */; };
 		7DC0765A2B624F090004A095 /* Documentation.docc in Sources */ = {isa = PBXBuildFile; fileRef = 7DC076592B624F090004A095 /* Documentation.docc */; };
-		7DD4532A2B4AEA6A004D3AD0 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD453292B4AEA6A004D3AD0 /* Main.swift */; };
-		7DD4532C2B4AEA6A004D3AD0 /* TradingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */; };
 		7DD4532E2B4AEA6B004D3AD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */; };
 		7DD453312B4AEA6B004D3AD0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DD453302B4AEA6B004D3AD0 /* Preview Assets.xcassets */; };
 		7DD453382B4AEDB0004D3AD0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DD453372B4AEDB0004D3AD0 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7DA071FF2B642B580035772B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7DA071FE2B642B580035772B /* CoreData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		7D7BE5D72B60F0F500EF0AB8 /* CashDerivative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashDerivative.swift; sourceTree = "<group>"; };
-		7D7BE5D92B60F11200EF0AB8 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
-		7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrency.swift; sourceTree = "<group>"; };
-		7D7BE5DD2B60F43300EF0AB8 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		7D7BE5E42B6131AA00EF0AB8 /* CDSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSavedNotes.swift; sourceTree = "<group>"; };
-		7D7BE5EE2B61745D00EF0AB8 /* FSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSavedNotes.swift; sourceTree = "<group>"; };
-		7D7BE5F02B61746F00EF0AB8 /* OSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSavedNotes.swift; sourceTree = "<group>"; };
-		7D7BE5F22B61747D00EF0AB8 /* CCSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSavedNotes.swift; sourceTree = "<group>"; };
+		7DA071FB2B642B530035772B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7DA072132B643B650035772B /* TraderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraderApp.swift; sourceTree = "<group>"; };
+		7DA072152B643BB00035772B /* TradeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeDetailView.swift; sourceTree = "<group>"; };
+		7DA0721A2B643D8F0035772B /* .xcdatamodeld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = .xcdatamodeld.xcdatamodel; sourceTree = "<group>"; };
+		7DA0721C2B643DEE0035772B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		7DA0721E2B643FFD0035772B /* UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePicker.swift; sourceTree = "<group>"; };
+		7DA072202B6442600035772B /* PriceChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceChartView.swift; sourceTree = "<group>"; };
+		7DA072222B6442CD0035772B /* UNUserNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNUserNotificationCenter.swift; sourceTree = "<group>"; };
 		7DC076592B624F090004A095 /* Documentation.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Documentation.docc; sourceTree = "<group>"; };
 		7DD453262B4AEA6A004D3AD0 /* Trading Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trading Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DD453292B4AEA6A004D3AD0 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingStyle.swift; sourceTree = "<group>"; };
 		7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DD453302B4AEA6B004D3AD0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7DD453372B4AEDB0004D3AD0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -46,46 +58,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA071FD2B642B580035772B /* CoreData.framework in Frameworks */,
+				7DA072262B6448030035772B /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7D7BE5E62B613C0100EF0AB8 /* CashDerivative */ = {
+		7DA071FA2B642B530035772B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7D7BE5D72B60F0F500EF0AB8 /* CashDerivative.swift */,
-				7D7BE5E42B6131AA00EF0AB8 /* CDSavedNotes.swift */,
+				7DA071FB2B642B530035772B /* CoreData.framework */,
 			);
-			path = CashDerivative;
-			sourceTree = "<group>";
-		};
-		7D7BE5E72B613C1500EF0AB8 /* Future */ = {
-			isa = PBXGroup;
-			children = (
-				7D7BE5D92B60F11200EF0AB8 /* Future.swift */,
-				7D7BE5EE2B61745D00EF0AB8 /* FSavedNotes.swift */,
-			);
-			path = Future;
-			sourceTree = "<group>";
-		};
-		7D7BE5E82B613C1F00EF0AB8 /* Option */ = {
-			isa = PBXGroup;
-			children = (
-				7D7BE5DD2B60F43300EF0AB8 /* Option.swift */,
-				7D7BE5F02B61746F00EF0AB8 /* OSavedNotes.swift */,
-			);
-			path = Option;
-			sourceTree = "<group>";
-		};
-		7D7BE5E92B613C2800EF0AB8 /* CryptoCurrency */ = {
-			isa = PBXGroup;
-			children = (
-				7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */,
-				7D7BE5F22B61747D00EF0AB8 /* CCSavedNotes.swift */,
-			);
-			path = CryptoCurrency;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7DD4531D2B4AEA6A004D3AD0 = {
@@ -94,6 +80,7 @@
 				7DC076592B624F090004A095 /* Documentation.docc */,
 				7DD453282B4AEA6A004D3AD0 /* Trading Journal */,
 				7DD453272B4AEA6A004D3AD0 /* Products */,
+				7DA071FA2B642B530035772B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,15 +95,16 @@
 		7DD453282B4AEA6A004D3AD0 /* Trading Journal */ = {
 			isa = PBXGroup;
 			children = (
-				7DD453292B4AEA6A004D3AD0 /* Main.swift */,
-				7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */,
-				7D7BE5E62B613C0100EF0AB8 /* CashDerivative */,
-				7D7BE5E72B613C1500EF0AB8 /* Future */,
-				7D7BE5E82B613C1F00EF0AB8 /* Option */,
-				7D7BE5E92B613C2800EF0AB8 /* CryptoCurrency */,
 				7DD453372B4AEDB0004D3AD0 /* Launch Screen.storyboard */,
 				7DD4532D2B4AEA6B004D3AD0 /* Assets.xcassets */,
 				7DD4532F2B4AEA6B004D3AD0 /* Preview Content */,
+				7DA072132B643B650035772B /* TraderApp.swift */,
+				7DA072202B6442600035772B /* PriceChartView.swift */,
+				7DA072222B6442CD0035772B /* UNUserNotificationCenter.swift */,
+				7DA072192B643D8F0035772B /* .xcdatamodeld.xcdatamodeld */,
+				7DA072152B643BB00035772B /* TradeDetailView.swift */,
+				7DA0721E2B643FFD0035772B /* UIImagePicker.swift */,
+				7DA0721C2B643DEE0035772B /* CoreDataManager.swift */,
 			);
 			path = "Trading Journal";
 			sourceTree = "<group>";
@@ -139,12 +127,16 @@
 				7DD453222B4AEA6A004D3AD0 /* Sources */,
 				7DD453232B4AEA6A004D3AD0 /* Frameworks */,
 				7DD453242B4AEA6A004D3AD0 /* Resources */,
+				7DA071FF2B642B580035772B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Trading Journal";
+			packageProductDependencies = (
+				7DA072252B6448030035772B /* SwiftUICharts */,
+			);
 			productName = "Trading Journal";
 			productReference = 7DD453262B4AEA6A004D3AD0 /* Trading Journal.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 7DD4531D2B4AEA6A004D3AD0;
+			packageReferences = (
+				7DA072242B6448030035772B /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+			);
 			productRefGroup = 7DD453272B4AEA6A004D3AD0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -201,17 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D7BE5D82B60F0F500EF0AB8 /* CashDerivative.swift in Sources */,
-				7D7BE5E52B6131AA00EF0AB8 /* CDSavedNotes.swift in Sources */,
+				7DA072162B643BB00035772B /* TradeDetailView.swift in Sources */,
 				7DC0765A2B624F090004A095 /* Documentation.docc in Sources */,
-				7D7BE5DA2B60F11200EF0AB8 /* Future.swift in Sources */,
-				7D7BE5F32B61747D00EF0AB8 /* CCSavedNotes.swift in Sources */,
-				7DD4532C2B4AEA6A004D3AD0 /* TradingStyle.swift in Sources */,
-				7D7BE5DC2B60F41300EF0AB8 /* CryptoCurrency.swift in Sources */,
-				7D7BE5DE2B60F43300EF0AB8 /* Option.swift in Sources */,
-				7D7BE5F12B61746F00EF0AB8 /* OSavedNotes.swift in Sources */,
-				7D7BE5EF2B61745D00EF0AB8 /* FSavedNotes.swift in Sources */,
-				7DD4532A2B4AEA6A004D3AD0 /* Main.swift in Sources */,
+				7DA0721B2B643D8F0035772B /* .xcdatamodeld.xcdatamodeld in Sources */,
+				7DA072232B6442CD0035772B /* UNUserNotificationCenter.swift in Sources */,
+				7DA0721D2B643DEE0035772B /* CoreDataManager.swift in Sources */,
+				7DA072142B643B650035772B /* TraderApp.swift in Sources */,
+				7DA072212B6442600035772B /* PriceChartView.swift in Sources */,
+				7DA0721F2B643FFD0035772B /* UIImagePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trading Journal/Preview Content\"";
@@ -353,6 +346,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -375,6 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Trading Journal/Preview Content\"";
@@ -386,6 +381,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -425,6 +421,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7DA072242B6448030035772B /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willdale/SwiftUICharts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7DA072252B6448030035772B /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DA072242B6448030035772B /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		7DA072192B643D8F0035772B /* .xcdatamodeld.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7DA0721A2B643D8F0035772B /* .xcdatamodeld.xcdatamodel */,
+			);
+			currentVersion = 7DA0721A2B643D8F0035772B /* .xcdatamodeld.xcdatamodel */;
+			path = .xcdatamodeld.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7DD4531E2B4AEA6A004D3AD0 /* Project object */;
 }
