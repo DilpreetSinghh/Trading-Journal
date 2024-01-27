@@ -91,8 +91,8 @@ struct FutureDerivative: View {
                         }))
                         row(view: AnyView(HStack {
                             Text("Type")
-                            TextField("Buy/Sell", text: $futureDerivativeData.FDB_TradingType)
-                            TextField("Buy/Sell", text: $futureDerivativeData.FDI_TradingType)
+                            TextField("Call/Put", text: $futureDerivativeData.FDB_TradingType)
+                            TextField("Call/Put", text: $futureDerivativeData.FDI_TradingType)
                         }))
                         row(view: AnyView(HStack {
                             Text("Buy  ")

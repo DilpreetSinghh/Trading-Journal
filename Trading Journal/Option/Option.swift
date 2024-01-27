@@ -91,8 +91,8 @@ struct OptionDerivative: View {
                         }))
                         row(view: AnyView(HStack {
                             Text("Type")
-                            TextField("Buy/Sell", text: $optionDerivativeData.ODB_TradingType)
-                            TextField("Buy/Sell", text: $optionDerivativeData.ODI_TradingType)
+                            TextField("Call/Put", text: $optionDerivativeData.ODB_TradingType)
+                            TextField("Call/Put", text: $optionDerivativeData.ODI_TradingType)
                         }))
                         row(view: AnyView(HStack {
                             Text("Buy  ")
