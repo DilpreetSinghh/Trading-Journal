@@ -11,6 +11,7 @@ Writing on journal (Physical notebook) isn't efficient. I will give you an examp
 you are Intraday trader, You studied a few article regarding market situation as well as watch and analyse chart patterns. you can't write that down.
 
 If you think, I can have screenshot and later I can refer from it, then good luck!
+It has functionality of getting screenshots from the gallery
 
 Trading Journal's goals is to combine the screenshot, links entry and exit estimates before trade and get details after trade. although you will get profit and loss analyse from trader. but here now you can read every single step you took before taking your trade.
 
