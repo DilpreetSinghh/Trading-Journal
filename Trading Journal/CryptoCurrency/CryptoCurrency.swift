@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+import UIKit
 // Define a data model that conforms to Codable
 struct CryptoCurrencyDerivativeData: Identifiable, Codable {
     let id: UUID = UUID()

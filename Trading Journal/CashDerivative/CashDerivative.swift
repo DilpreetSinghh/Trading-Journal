@@ -27,7 +27,20 @@ struct CashDerivativeData: Identifiable, Codable {
     var CDB_NetProfit: String
     var CDI_NetProfit: String
     var notes: String
+    var imageData: Data?
+    
+    var image: UIImage? {
+            get {
+                guard let imageData = imageData else { return nil }
+                return UIImage(data: imageData)
+            }
+            set {
+                imageData = newValue?.jpegData(compressionQuality: 1.0)
+            }
+        }
 }
+
+
 
 struct CashDerivative: View {
     
@@ -51,7 +64,8 @@ struct CashDerivative: View {
         CDI_Qty: "",
         CDB_NetProfit: "",
         CDI_NetProfit: "",
-        notes: ""
+        notes: "",
+        imageData: nil
     )
     
     // Show saved notes
@@ -250,6 +264,8 @@ struct CashDerivative: View {
         cashDerivativeData.CDB_NetProfit = cashDerivativeData.CDB_NetProfit
         cashDerivativeData.CDI_NetProfit = cashDerivativeData.CDI_NetProfit
         cashDerivativeData.notes = cashDerivativeData.notes
+        
+
         
         // Save the date and time
         cashDerivativeData.selectedDate = cashDerivativeData.selectedDate

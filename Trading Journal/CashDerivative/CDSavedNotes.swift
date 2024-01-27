@@ -86,11 +86,11 @@ struct CDSavedNotes: View {
         }
     }
     private func loadSavedImage() {
-            // Load the saved image data from UserDefaults
-            if let imageData = UserDefaults.standard.data(forKey: "cashDerivativeImageData") {
-                savedImage = UIImage(data: imageData)
-            }
+        // Load the saved image data from UserDefaults
+        if let imageData = UserDefaults.standard.data(forKey: "cashDerivativeImageData") {
+            savedImage = UIImage(data: imageData)
         }
+    }
     
     
 }

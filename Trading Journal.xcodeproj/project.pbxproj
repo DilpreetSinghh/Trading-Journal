@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D65797F2B64E31400B748ED /* UIImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D65797E2B64E31400B748ED /* UIImageViewController.swift */; };
 		7D6702682B62D0BE00A0CAE8 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6702672B62D0BE00A0CAE8 /* Recent.swift */; };
 		7D7BE5D82B60F0F500EF0AB8 /* CashDerivative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5D72B60F0F500EF0AB8 /* CashDerivative.swift */; };
 		7D7BE5DA2B60F11200EF0AB8 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5D92B60F11200EF0AB8 /* Future.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D65797E2B64E31400B748ED /* UIImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewController.swift; sourceTree = "<group>"; };
 		7D6702672B62D0BE00A0CAE8 /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
 		7D7BE5D72B60F0F500EF0AB8 /* CashDerivative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashDerivative.swift; sourceTree = "<group>"; };
 		7D7BE5D92B60F11200EF0AB8 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Future.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				7DD4532B2B4AEA6A004D3AD0 /* TradingStyle.swift */,
 				7DA072292B646E780035772B /* SharedViewModel.swift */,
 				7D6702672B62D0BE00A0CAE8 /* Recent.swift */,
+				7D65797E2B64E31400B748ED /* UIImageViewController.swift */,
 				7D7BE5E62B613C0100EF0AB8 /* CashDerivative */,
 				7D7BE5E72B613C1500EF0AB8 /* Future */,
 				7D7BE5E82B613C1F00EF0AB8 /* Option */,
@@ -212,6 +215,7 @@
 				7D7BE5F32B61747D00EF0AB8 /* CCSavedNotes.swift in Sources */,
 				7DD4532C2B4AEA6A004D3AD0 /* TradingStyle.swift in Sources */,
 				7D7BE5DC2B60F41300EF0AB8 /* CryptoCurrency.swift in Sources */,
+				7D65797F2B64E31400B748ED /* UIImageViewController.swift in Sources */,
 				7D7BE5DE2B60F43300EF0AB8 /* Option.swift in Sources */,
 				7D7BE5F12B61746F00EF0AB8 /* ODSavedNotes.swift in Sources */,
 				7D7BE5EF2B61745D00EF0AB8 /* FDSavedNotes.swift in Sources */,
