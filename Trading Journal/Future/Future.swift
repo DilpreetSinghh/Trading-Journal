@@ -9,7 +9,8 @@
 import SwiftUI
 
 // Define a data model that conforms to Codable
-struct FutureData: Codable {
+struct FutureData: Identifiable, Codable {
+    let id: UUID = UUID()
     var selectedDate: Date
     var selectedTime: Date
     var CDSymbol: String
@@ -28,12 +29,12 @@ struct FutureData: Codable {
     var notes: String
 }
 
-struct Future: View {
+struct CashDerivative: View {
     
     // MARK: - State Variables
     
     // New data model instance
-    @State private var futureData = FutureData(
+    @State private var cashDerivativeData = CashDerivativeData(
         selectedDate: Date(),
         selectedTime: Date(),
         CDSymbol: "",
@@ -53,37 +54,34 @@ struct Future: View {
     )
     
     // Show saved notes
-    @State private var showingFSavedNotes = false
+    @State private var showingCDSavedNotes = false
     
     // Saved message
-    @State private var fsavedMessage = ""
+    @State private var cdsavedMessage = ""
     
     // MARK: - Body
     
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVStack {
+                VStack {
                     
                     // MARK: - Date and Time Section
                     
                     Group {
                         // Date picker for selecting a date
-                        row(view: AnyView(DatePicker("Date", selection: $futureData.selectedDate, in: ...Date(), displayedComponents: .date)))
+                        row(view: AnyView(DatePicker("Date", selection: $cashDerivativeData.selectedDate, in: ...Date(), displayedComponents: .date)))
                         
                         // Time picker for selecting a time
-                        Text("Time of Trade")
-                            .font(.headline)
-                            .padding(.vertical, 5)
-                        row(view: AnyView(DatePicker("", selection: $futureData.selectedTime, in: ...Date(), displayedComponents: .hourAndMinute)
-                            .datePickerStyle(WheelDatePickerStyle())))
+                        Text("")
+                        row(view: AnyView(DatePicker("Time of Trade", selection: $cashDerivativeData.selectedTime, displayedComponents: .hourAndMinute)))
                         
                         // Text field for typing the symbol
                         row(view: AnyView(HStack {
                             Text("Symbol")
                                 .foregroundColor(.primary)
                                 .frame(width: 100, alignment: .leading) // Adjust width as needed
-                            TextField("Type symbol of stock here", text: $futureData.CDSymbol)
+                            TextField("Type symbol of stock here", text: $cashDerivativeData.CDSymbol)
                         }))
                     }
                     
@@ -110,38 +108,38 @@ struct Future: View {
                         // Trading type, buy and sell price, stop loss, quantity, and net profit/loss for both Before (B) and After (A)
                         row(view: AnyView(HStack {
                             Text("Type")
-                            TextField("Buy/Sell", text: $futureData.CDB_TradingType)
-                            TextField("Buy/Sell", text: $futureData.CDI_TradingType)
+                            TextField("Buy/Sell", text: $cashDerivativeData.CDB_TradingType)
+                            TextField("Buy/Sell", text: $cashDerivativeData.CDI_TradingType)
                         }))
                         
                         row(view: AnyView(HStack {
                             Text("Buy  ")
-                            TextField("Buy Price", text: $futureData.CDB_BuyPrice)
-                            TextField("Buy Price", text: $futureData.CDI_BuyPrice)
+                            TextField("Buy Price", text: $cashDerivativeData.CDB_BuyPrice)
+                            TextField("Buy Price", text: $cashDerivativeData.CDI_BuyPrice)
                         }))
                         
                         row(view: AnyView(HStack {
                             Text("Sell  ")
-                            TextField("Sell Price", text: $futureData.CDB_SellPrice)
-                            TextField("Sell Price", text: $futureData.CDI_SellPrice)
+                            TextField("Sell Price", text: $cashDerivativeData.CDB_SellPrice)
+                            TextField("Sell Price", text: $cashDerivativeData.CDI_SellPrice)
                         }))
                         
                         row(view: AnyView(HStack {
                             Text("SL   ")
-                            TextField("Stop Loss", text: $futureData.CDB_StopLoss)
-                            TextField("Stop Loss", text: $futureData.CDI_StopLoss)
+                            TextField("Stop Loss", text: $cashDerivativeData.CDB_StopLoss)
+                            TextField("Stop Loss", text: $cashDerivativeData.CDI_StopLoss)
                         }))
                         
                         row(view: AnyView(HStack {
                             Text("Qty  ")
-                            TextField("Quantity", text: $futureData.CDB_Qty)
-                            TextField("Quantity", text: $futureData.CDI_Qty)
+                            TextField("Quantity", text: $cashDerivativeData.CDB_Qty)
+                            TextField("Quantity", text: $cashDerivativeData.CDI_Qty)
                         }))
                         
                         row(view: AnyView(HStack {
                             Text("Net  ")
-                            TextField("Profit/ Loss", text: $futureData.CDB_NetProfit)
-                            TextField("Profit/ Loss", text: $futureData.CDI_NetProfit)
+                            TextField("Profit/ Loss", text: $cashDerivativeData.CDB_NetProfit)
+                            TextField("Profit/ Loss", text: $cashDerivativeData.CDI_NetProfit)
                         }))
                     }
                     
@@ -149,7 +147,7 @@ struct Future: View {
                     VStack(alignment: .leading) {
                         Text("Notes:")
                             .font(.headline)
-                        TextEditor(text: $futureData.notes)
+                        TextEditor(text: $cashDerivativeData.notes)
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(8.0)
                             .frame(minHeight: 100)
@@ -157,7 +155,7 @@ struct Future: View {
                     
                     // Save button
                     Button("Save") {
-                        saveData()
+                        cdsaveData()
                     }
                     .padding()
                     .foregroundColor(.white)
@@ -166,34 +164,37 @@ struct Future: View {
                     
                     // Show saved notes button
                     Button("Show Saved Notes") {
-                        showingFSavedNotes = true
+                        showingCDSavedNotes = true
                     }
                     .padding()
                     .foregroundColor(.white)
                     .background(Color.green)
                     .cornerRadius(8.0)
-                    .sheet(isPresented: $showingFSavedNotes) {
-                        FSavedNotes()
+                    .sheet(isPresented: $showingCDSavedNotes) {
+                        CDSavedNotes()
                     }
                     
                     // Display saved message
-                    Text(fsavedMessage)
+                    Text(cdsavedMessage)
                         .foregroundColor(.green)
                         .padding()
                 }
                 .padding()
             }
-            .navigationTitle("Future")
-            NavigationLink("Show Saved Notes", destination: FSavedNotes())
+            .navigationTitle(
+                Text("Cash Derivative")
+            )
+            
+            NavigationLink("Show Saved Notes", destination: CDSavedNotes())
                 .padding()
                 .foregroundColor(.white)
                 .background(Color.green)
-                .cornerRadius(10.0)
-            .sheet(isPresented: $showingFSavedNotes) {
-                        FSavedNotes()
-                    }
-
-
+                .cornerRadius(8.0)
+                .fullScreenCover(isPresented: $showingCDSavedNotes) {
+                    CDSavedNotes()
+                }
+            
+            
         }
     }
     
@@ -213,22 +214,44 @@ struct Future: View {
     
     // MARK: - Save Data Function
     
-    func saveData() {
+    func cdsaveData() {
+        // Save the data from text fields to the model
+        cashDerivativeData.CDSymbol = cashDerivativeData.CDSymbol
+        cashDerivativeData.CDB_TradingType = cashDerivativeData.CDB_TradingType
+        cashDerivativeData.CDI_TradingType = cashDerivativeData.CDI_TradingType
+        cashDerivativeData.CDB_BuyPrice = cashDerivativeData.CDB_BuyPrice
+        cashDerivativeData.CDI_BuyPrice = cashDerivativeData.CDI_BuyPrice
+        cashDerivativeData.CDB_SellPrice = cashDerivativeData.CDB_SellPrice
+        cashDerivativeData.CDI_SellPrice = cashDerivativeData.CDI_SellPrice
+        cashDerivativeData.CDB_StopLoss = cashDerivativeData.CDB_StopLoss
+        cashDerivativeData.CDI_StopLoss = cashDerivativeData.CDI_StopLoss
+        cashDerivativeData.CDB_Qty = cashDerivativeData.CDB_Qty
+        cashDerivativeData.CDI_Qty = cashDerivativeData.CDI_Qty
+        cashDerivativeData.CDB_NetProfit = cashDerivativeData.CDB_NetProfit
+        cashDerivativeData.CDI_NetProfit = cashDerivativeData.CDI_NetProfit
+        cashDerivativeData.notes = cashDerivativeData.notes
+        
+        // Save the date and time
+        cashDerivativeData.selectedDate = cashDerivativeData.selectedDate
+        cashDerivativeData.selectedTime = cashDerivativeData.selectedTime
+        
         // Save the data model to UserDefaults
-        let encoder = JSONEncoder()
-        if let encodedData = try? encoder.encode(futureData) {
-            UserDefaults.standard.set(encodedData, forKey: "futureData")
-            fsavedMessage = "Data Saved!"
-        } else {
-            fsavedMessage = "Failed to save data."
+        do {
+            let encoder = JSONEncoder()
+            let encodedData = try encoder.encode(cashDerivativeData)
+            UserDefaults.standard.set(encodedData, forKey: "cashDerivativeData")
+            cdsavedMessage = "Data Saved!"
+        } catch {
+            print("Error encoding data: \(error.localizedDescription)")
+            cdsavedMessage = "Failed to save data."
         }
     }
     
     private func loadSavedNotes() {
         do {
-            if let encodedData = UserDefaults.standard.data(forKey: "futureData") {
+            if let encodedData = UserDefaults.standard.data(forKey: "cashDerivativeData") {
                 let decoder = JSONDecoder()
-                let futureData = try decoder.decode(FutureData.self, from: encodedData)
+                let cashDerivativeData = try decoder.decode(CashDerivativeData.self, from: encodedData)
                 
             }
         } catch {
@@ -240,8 +263,5 @@ struct Future: View {
 }
 
 #Preview {
-        Future()
+    CashDerivative()
 }
-
-
-

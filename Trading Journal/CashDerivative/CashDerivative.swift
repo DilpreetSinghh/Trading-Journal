@@ -9,7 +9,8 @@
 import SwiftUI
 
 // Define a data model that conforms to Codable
-struct CashDerivativeData: Codable {
+struct CashDerivativeData: Identifiable, Codable {
+    let id: UUID = UUID()
     var selectedDate: Date
     var selectedTime: Date
     var CDSymbol: String
@@ -63,7 +64,7 @@ struct CashDerivative: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVStack {
+                VStack {
                     
                     // MARK: - Date and Time Section
                     
@@ -72,11 +73,8 @@ struct CashDerivative: View {
                         row(view: AnyView(DatePicker("Date", selection: $cashDerivativeData.selectedDate, in: ...Date(), displayedComponents: .date)))
                         
                         // Time picker for selecting a time
-                        Text("Time of Trade")
-                            .font(.headline)
-                            .padding(.vertical, 5)
-                        row(view: AnyView(DatePicker("", selection: $cashDerivativeData.selectedTime, in: ...Date(), displayedComponents: .hourAndMinute)
-                            .datePickerStyle(WheelDatePickerStyle())))
+                        Text("")
+                        row(view: AnyView(DatePicker("Time of Trade", selection: $cashDerivativeData.selectedTime, displayedComponents: .hourAndMinute)))
                         
                         // Text field for typing the symbol
                         row(view: AnyView(HStack {
@@ -192,11 +190,11 @@ struct CashDerivative: View {
                 .foregroundColor(.white)
                 .background(Color.green)
                 .cornerRadius(8.0)
-            .sheet(isPresented: $showingCDSavedNotes) {
-                        CDSavedNotes()
-                    }
-
-
+                .fullScreenCover(isPresented: $showingCDSavedNotes) {
+                    CDSavedNotes()
+                }
+            
+            
         }
     }
     
@@ -232,11 +230,11 @@ struct CashDerivative: View {
         cashDerivativeData.CDB_NetProfit = cashDerivativeData.CDB_NetProfit
         cashDerivativeData.CDI_NetProfit = cashDerivativeData.CDI_NetProfit
         cashDerivativeData.notes = cashDerivativeData.notes
-
+        
         // Save the date and time
         cashDerivativeData.selectedDate = cashDerivativeData.selectedDate
         cashDerivativeData.selectedTime = cashDerivativeData.selectedTime
-
+        
         // Save the data model to UserDefaults
         do {
             let encoder = JSONEncoder()
@@ -260,7 +258,7 @@ struct CashDerivative: View {
             print("Error loading saved notes: \(error.localizedDescription)")
         }
         
-    }   
+    }
     
 }
 

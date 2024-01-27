@@ -3,6 +3,8 @@ import SwiftUI
 
 struct CDSavedNotes: View {
     @State private var savedNotes: String?
+    @EnvironmentObject var viewModel: SharedViewModel
+    
     
     static let dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
@@ -48,10 +50,14 @@ struct CDSavedNotes: View {
                 let decoder = JSONDecoder()
                 let cashDerivativeData = try decoder.decode(CashDerivativeData.self, from: encodedData)
 
+                // Assuming selectedDate and selectedTime are Date objects
+                let dateString = CDSavedNotes.dateFormatter.string(from: cashDerivativeData.selectedDate)
+                let timeString = CDSavedNotes.timeFormatter.string(from: cashDerivativeData.selectedTime)
+
                 // Build a string with all the details
                 savedNotes = """
-                Date: \(cashDerivativeData.selectedDate)
-                Time: \(cashDerivativeData.selectedTime)
+                Date: \(dateString)
+                Time: \(timeString)
                 Symbol: \(cashDerivativeData.CDSymbol)
                 CDB Trading Type: \(cashDerivativeData.CDB_TradingType)
                 CDI Trading Type: \(cashDerivativeData.CDI_TradingType)
@@ -72,4 +78,6 @@ struct CDSavedNotes: View {
             print("Error loading saved notes: \(error.localizedDescription)")
         }
     }
+    
+
 }
