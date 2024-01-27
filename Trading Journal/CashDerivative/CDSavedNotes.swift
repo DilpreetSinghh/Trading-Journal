@@ -3,23 +3,24 @@ import SwiftUI
 
 struct CDSavedNotes: View {
     @State private var savedNotes: String?
+    @State private var savedImage: UIImage? = nil
     @EnvironmentObject var viewModel: SharedViewModel
     
     
     static let dateFormatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .short
-            formatter.timeStyle = .none
-            return formatter
-        }()
-
-        // Time formatter for 24-hour format
-        static let timeFormatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm"
-            return formatter
-        }()
-
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        return formatter
+    }()
+    
+    // Time formatter for 24-hour format
+    static let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }()
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -31,6 +32,11 @@ struct CDSavedNotes: View {
                             .padding()
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(8.0)
+                        if let savedImage = savedImage {
+                            Image(uiImage: savedImage)
+                                .resizable()
+                                .scaledToFit()
+                        }
                     } else {
                         Text("No saved notes available.")
                     }
@@ -40,20 +46,21 @@ struct CDSavedNotes: View {
             .navigationTitle("Cash Derivative Notes")
             .onAppear {
                 loadSavedNotes()
+                loadSavedImage()
             }
         }
     }
-
+    
     private func loadSavedNotes() {
         do {
             if let encodedData = UserDefaults.standard.data(forKey: "cashDerivativeData") {
                 let decoder = JSONDecoder()
                 let cashDerivativeData = try decoder.decode(CashDerivativeData.self, from: encodedData)
-
+                
                 // Assuming selectedDate and selectedTime are Date objects
                 let dateString = CDSavedNotes.dateFormatter.string(from: cashDerivativeData.selectedDate)
                 let timeString = CDSavedNotes.timeFormatter.string(from: cashDerivativeData.selectedTime)
-
+                
                 // Build a string with all the details
                 savedNotes = """
                 Date: \(dateString)
@@ -78,6 +85,12 @@ struct CDSavedNotes: View {
             print("Error loading saved notes: \(error.localizedDescription)")
         }
     }
+    private func loadSavedImage() {
+            // Load the saved image data from UserDefaults
+            if let imageData = UserDefaults.standard.data(forKey: "cashDerivativeImageData") {
+                savedImage = UIImage(data: imageData)
+            }
+        }
     
-
+    
 }
