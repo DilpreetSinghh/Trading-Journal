@@ -34,6 +34,7 @@ struct CashDerivative: View {
     // MARK: - State Variables
     
     // New data model instance
+    
     @State private var cashDerivativeData = CashDerivativeData(
         selectedDate: Date(),
         selectedTime: Date(),
@@ -58,6 +59,8 @@ struct CashDerivative: View {
     
     // Saved message
     @State private var cdsavedMessage = ""
+    @State private var isShowingImagePicker = false
+    @State private var selectedImage: UIImage?
     
     // MARK: - Body
     
@@ -151,6 +154,23 @@ struct CashDerivative: View {
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(8.0)
                             .frame(minHeight: 100)
+                        
+                        Button("Upload Photo") {
+                            self.isShowingImagePicker = true
+                        }
+                        .sheet(isPresented: $isShowingImagePicker) {
+                            ImagePicker(selectedImage: $selectedImage)
+                        }
+                        
+                        // Display the selected image if available
+                        if let selectedImage = selectedImage {
+                            Image(uiImage: selectedImage)
+                                .resizable()
+                                .scaledToFit()
+                        }
+                        
+                        
+                        
                     }
                     
                     // Save button
