@@ -1,4 +1,5 @@
 # Trading-Journal
+## Theme - Financial Inclusion 
 
 Amar and I am a trader myself. We have a very good idea what a new or even expert trader have issue while work.
 
@@ -13,7 +14,6 @@ If you think, I can have screenshot and later I can refer from it, then good luc
 
 Trading Journal's goals is to combine the screenshot, links entry and exit estimates before trade and get details after trade. although you will get profit and loss analyse from trader. but here now you can read every single step you took before taking your trade.
 
-Creating documentation involves explaining the structure, functionality, and usage of your code. For your Swift app with `CashDerivativeData` and `CDSavedNotes`, here's a basic outline of documentation that covers these aspects:
 
 ---
 
@@ -22,6 +22,11 @@ Creating documentation involves explaining the structure, functionality, and usa
 ## Overview
 
 The Cash Derivative app is designed to allow users to record and manage their trading journal entries specifically for cash and derivative trades. It includes features for entering trade details, saving these entries, and reviewing saved entries.
+
+## Requirements to run Coding file
+Mac OS Sonoma 14.0
+Simulator: iOS 17 or iPhone 17.0
+Xcode 15.0
 
 ## Structures
 
@@ -78,6 +83,25 @@ Error handling is implemented using `do-catch` blocks around JSON encoding and d
 
 Users interact with the `CashDerivative` view to enter new trade details. Upon saving, the data is persisted to `UserDefaults`. Users can navigate to the `CDSavedNotes` view to see a list of their saved entries.
 
+Features
+Trade Recording: Users can log every trade with comprehensive details, ensuring no aspect of the trade is overlooked.
+Performance Analysis: The app enables traders to analyze their trading performance over time, identifying profitable patterns and areas for improvement.
+Market Adaptability: Supports a wide range of trading instruments, from traditional stocks to cryptocurrencies, making it versatile for different market participants.
+Notes and Reflections: The note-taking feature encourages traders to reflect on their decisions, fostering a growth mindset and continuous learning.
+Importance and Need in the Market
+
+For Stock Market Traders
+Record Keeping: Maintains a detailed record of all trades, helping traders comply with regulatory requirements and manage their portfolios more effectively.
+Strategy Improvement: By analyzing past trades, traders can identify what strategies work best, helping them refine their approach and improve profitability.
+For Cryptocurrency Traders
+Market Volatility Management: Given the volatile nature of cryptocurrencies, the app helps traders track their positions closely and make informed decisions based on historical performance.
+Diverse Portfolio Management: Supports a variety of cryptocurrencies, enabling traders to manage and analyze a diverse portfolio from a single platform.
+Market Need
+Comprehensive Analysis Tool: The app fills the gap for a comprehensive trading journal that not only tracks trades but also offers in-depth analysis features.
+Adaptability to Market Trends: With support for both stock and cryptocurrency markets, the app caters to the evolving needs of modern traders.
+Conclusion
+
+The Trading Journal app stands out as a valuable tool for stock market and cryptocurrency traders, combining detailed trade tracking with analytical insights. Its adaptability and comprehensive features make it an essential part of any trader's toolkit, helping them navigate the complexities of the market with greater confidence and efficiency.
 ---
 
 This is a general template for documentation. Depending on the complexity of your app and the audience for your documentation (developers, users, stakeholders), you might need to add more details, such as code snippets, usage examples, screenshots, and explanations of the underlying logic.
