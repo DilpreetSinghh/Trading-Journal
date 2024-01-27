@@ -35,7 +35,7 @@ struct CCSavedNotes: View {
                 }
                 .padding()
             }
-            .navigationTitle("Saved Notes")
+            .navigationTitle("Crypto Notes")
             .onAppear {
                 loadSavedNotes()
             }

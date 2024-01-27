@@ -29,7 +29,7 @@ struct ODSavedNotes: View {
                 }
                 .padding()
             }
-            .navigationTitle("Saved Notes")
+            .navigationTitle("Option Notes")
             .onAppear {
                 loadODSavedNotes()
             }

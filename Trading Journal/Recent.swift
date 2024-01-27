@@ -14,11 +14,13 @@ struct Recent: View {
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 20) {
-                CDSavedNotes()
-                FDSavedNotes()
-                ODSavedNotes()
-                CCSavedNotes()
+            ScrollView{
+                VStack(spacing: 20) {
+                    CDSavedNotes()
+                    FDSavedNotes()
+                    ODSavedNotes()
+                    CCSavedNotes()
+                }
             }
             .navigationTitle("Recent Transactions")
         }

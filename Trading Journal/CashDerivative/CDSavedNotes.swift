@@ -37,7 +37,7 @@ struct CDSavedNotes: View {
                 }
                 .padding()
             }
-            .navigationTitle("Saved Notes")
+            .navigationTitle("Cash Derivative Notes")
             .onAppear {
                 loadSavedNotes()
             }

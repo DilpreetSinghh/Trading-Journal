@@ -35,7 +35,7 @@ struct FDSavedNotes: View {
                 }
                 .padding()
             }
-            .navigationTitle("Saved Notes")
+            .navigationTitle("Future Notes")
             .onAppear {
                 loadSavedNotes()
             }
