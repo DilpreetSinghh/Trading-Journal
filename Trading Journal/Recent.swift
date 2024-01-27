@@ -16,6 +16,9 @@ struct Recent: View {
         NavigationStack {
             VStack(spacing: 20) {
                 CDSavedNotes()
+                FDSavedNotes()
+                ODSavedNotes()
+                CCSavedNotes()
             }
             .navigationTitle("Recent Transactions")
         }
