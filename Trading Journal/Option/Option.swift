@@ -54,6 +54,8 @@ struct OptionDerivative: View {
     
     @State private var showingODSavedNotes = false
     @State private var odsavedMessage = ""
+    @State private var isShowingImagePicker = false
+    @State private var selectedImage: UIImage?
     
     // MARK: - Body
     
@@ -129,6 +131,21 @@ struct OptionDerivative: View {
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(8.0)
                             .frame(minHeight: 100)
+                        
+                        Button("Upload Photo") {
+                            self.isShowingImagePicker = true
+                        }
+                        .sheet(isPresented: $isShowingImagePicker) {
+                            ImagePicker(selectedImage: $selectedImage)
+                        }
+                        
+                        // Display the selected image if available
+                        if let selectedImage = selectedImage {
+                            Image(uiImage: selectedImage)
+                                .resizable()
+                                .scaledToFit()
+                        }
+                        
                     }
                     
                     // Save and Show Saved Notes Buttons
