@@ -8,15 +8,15 @@
 
 import SwiftUI
 
-struct OSavedNotes: View {
+struct ODSavedNotes: View {
 
-    @State private var osavedNotes: String?
+    @State private var odsavedNotes: String?
 
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    if let notes = osavedNotes {
+                    if let notes = odsavedNotes {
                         Text("Recently Saved Notes:")
                             .font(.headline)
                         Text(notes)
@@ -31,20 +31,17 @@ struct OSavedNotes: View {
             }
             .navigationTitle("Saved Notes")
             .onAppear {
-                loadOSavedNotes()
+                loadODSavedNotes()
             }
         }
     }
 
-    private func loadOSavedNotes() {
+    private func loadODSavedNotes() {
         do {
-            if let encodedData = UserDefaults.standard.data(forKey: "optionData") {
-                // Decode the saved data
+            if let encodedData = UserDefaults.standard.data(forKey: "optionDerivativeData") {
                 let decoder = JSONDecoder()
-                let optionData = try decoder.decode(FutureData.self, from: encodedData)
-
-                // Access the notes property from the decoded data
-                osavedNotes = optionData.notes
+                let optionData = try decoder.decode(OptionDerivativeData.self, from: encodedData)
+                odsavedNotes = optionData.notes
             }
         } catch {
             print("Error loading saved notes: \(error.localizedDescription)")
@@ -53,5 +50,5 @@ struct OSavedNotes: View {
 }
 
 #Preview {
-    OSavedNotes()
+    ODSavedNotes()
 }

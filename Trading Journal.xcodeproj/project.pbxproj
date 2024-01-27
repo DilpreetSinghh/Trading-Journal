@@ -13,8 +13,8 @@
 		7D7BE5DC2B60F41300EF0AB8 /* CryptoCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */; };
 		7D7BE5DE2B60F43300EF0AB8 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5DD2B60F43300EF0AB8 /* Option.swift */; };
 		7D7BE5E52B6131AA00EF0AB8 /* CDSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5E42B6131AA00EF0AB8 /* CDSavedNotes.swift */; };
-		7D7BE5EF2B61745D00EF0AB8 /* FSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5EE2B61745D00EF0AB8 /* FSavedNotes.swift */; };
-		7D7BE5F12B61746F00EF0AB8 /* OSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5F02B61746F00EF0AB8 /* OSavedNotes.swift */; };
+		7D7BE5EF2B61745D00EF0AB8 /* FDSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5EE2B61745D00EF0AB8 /* FDSavedNotes.swift */; };
+		7D7BE5F12B61746F00EF0AB8 /* ODSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5F02B61746F00EF0AB8 /* ODSavedNotes.swift */; };
 		7D7BE5F32B61747D00EF0AB8 /* CCSavedNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7BE5F22B61747D00EF0AB8 /* CCSavedNotes.swift */; };
 		7DA0722A2B646E780035772B /* SharedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA072292B646E780035772B /* SharedViewModel.swift */; };
 		7DD4532A2B4AEA6A004D3AD0 /* Trading_Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD453292B4AEA6A004D3AD0 /* Trading_Journal.swift */; };
@@ -31,8 +31,8 @@
 		7D7BE5DB2B60F41300EF0AB8 /* CryptoCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrency.swift; sourceTree = "<group>"; };
 		7D7BE5DD2B60F43300EF0AB8 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		7D7BE5E42B6131AA00EF0AB8 /* CDSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSavedNotes.swift; sourceTree = "<group>"; };
-		7D7BE5EE2B61745D00EF0AB8 /* FSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSavedNotes.swift; sourceTree = "<group>"; };
-		7D7BE5F02B61746F00EF0AB8 /* OSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSavedNotes.swift; sourceTree = "<group>"; };
+		7D7BE5EE2B61745D00EF0AB8 /* FDSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDSavedNotes.swift; sourceTree = "<group>"; };
+		7D7BE5F02B61746F00EF0AB8 /* ODSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODSavedNotes.swift; sourceTree = "<group>"; };
 		7D7BE5F22B61747D00EF0AB8 /* CCSavedNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSavedNotes.swift; sourceTree = "<group>"; };
 		7DA072292B646E780035772B /* SharedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViewModel.swift; sourceTree = "<group>"; };
 		7DD453262B4AEA6A004D3AD0 /* Trading Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trading Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				7D7BE5D92B60F11200EF0AB8 /* Future.swift */,
-				7D7BE5EE2B61745D00EF0AB8 /* FSavedNotes.swift */,
+				7D7BE5EE2B61745D00EF0AB8 /* FDSavedNotes.swift */,
 			);
 			path = Future;
 			sourceTree = "<group>";
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				7D7BE5DD2B60F43300EF0AB8 /* Option.swift */,
-				7D7BE5F02B61746F00EF0AB8 /* OSavedNotes.swift */,
+				7D7BE5F02B61746F00EF0AB8 /* ODSavedNotes.swift */,
 			);
 			path = Option;
 			sourceTree = "<group>";
@@ -213,8 +213,8 @@
 				7DD4532C2B4AEA6A004D3AD0 /* TradingStyle.swift in Sources */,
 				7D7BE5DC2B60F41300EF0AB8 /* CryptoCurrency.swift in Sources */,
 				7D7BE5DE2B60F43300EF0AB8 /* Option.swift in Sources */,
-				7D7BE5F12B61746F00EF0AB8 /* OSavedNotes.swift in Sources */,
-				7D7BE5EF2B61745D00EF0AB8 /* FSavedNotes.swift in Sources */,
+				7D7BE5F12B61746F00EF0AB8 /* ODSavedNotes.swift in Sources */,
+				7D7BE5EF2B61745D00EF0AB8 /* FDSavedNotes.swift in Sources */,
 				7DD4532A2B4AEA6A004D3AD0 /* Trading_Journal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

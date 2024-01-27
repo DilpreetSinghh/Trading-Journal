@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct CCSavedNotes: View {
+struct FDSavedNotes: View {
     @State private var savedNotes: String?
     @EnvironmentObject var viewModel: SharedViewModel
     
@@ -44,32 +44,32 @@ struct CCSavedNotes: View {
 
     private func loadSavedNotes() {
         do {
-            if let encodedData = UserDefaults.standard.data(forKey: "cryptocurrencyDerivativeData") {
+            if let encodedData = UserDefaults.standard.data(forKey: "futureDerivativeData") {
                 let decoder = JSONDecoder()
-                let cryptocurrencyDerivativeData = try decoder.decode(CryptoCurrencyDerivativeData.self, from: encodedData)
+                let futureDerivativeData = try decoder.decode(FutureDerivativeData.self, from: encodedData)
 
                 // Assuming selectedDate and selectedTime are Date objects
-                let dateString = CCSavedNotes.dateFormatter.string(from: cryptocurrencyDerivativeData.selectedDate)
-                let timeString = CCSavedNotes.timeFormatter.string(from: cryptocurrencyDerivativeData.selectedTime)
+                let dateString = FDSavedNotes.dateFormatter.string(from: futureDerivativeData.selectedDate)
+                let timeString = FDSavedNotes.timeFormatter.string(from: futureDerivativeData.selectedTime)
 
                 // Build a string with all the details
                 savedNotes = """
                 Date: \(dateString)
                 Time: \(timeString)
-                Symbol: \(cryptocurrencyDerivativeData.CCSymbol)
-                CCB Trading Type: \(cryptocurrencyDerivativeData.CCB_TradingType)
-                CCI Trading Type: \(cryptocurrencyDerivativeData.CCI_TradingType)
-                CCB Buy Price: \(cryptocurrencyDerivativeData.CCB_BuyPrice)
-                CCI Buy Price: \(cryptocurrencyDerivativeData.CCI_BuyPrice)
-                CCB Sell Price: \(cryptocurrencyDerivativeData.CCB_SellPrice)
-                CCI Sell Price: \(cryptocurrencyDerivativeData.CCI_SellPrice)
-                CCB Stop Loss: \(cryptocurrencyDerivativeData.CCB_StopLoss)
-                CCI Stop Loss: \(cryptocurrencyDerivativeData.CCI_StopLoss)
-                CCB Quantity: \(cryptocurrencyDerivativeData.CCB_Qty)
-                CCI Quantity: \(cryptocurrencyDerivativeData.CCI_Qty)
-                CCB Net Profit: \(cryptocurrencyDerivativeData.CCB_NetProfit)
-                CCI Net Profit: \(cryptocurrencyDerivativeData.CCI_NetProfit)
-                Notes: \(cryptocurrencyDerivativeData.notes)
+                Symbol: \(futureDerivativeData.FDSymbol)
+                FDB Trading Type: \(futureDerivativeData.FDB_TradingType)
+                FDI Trading Type: \(futureDerivativeData.FDI_TradingType)
+                FDB Buy Price: \(futureDerivativeData.FDB_BuyPrice)
+                FDI Buy Price: \(futureDerivativeData.FDI_BuyPrice)
+                FDB Sell Price: \(futureDerivativeData.FDB_SellPrice)
+                FDI Sell Price: \(futureDerivativeData.FDI_SellPrice)
+                FDB Stop Loss: \(futureDerivativeData.FDB_StopLoss)
+                FDI Stop Loss: \(futureDerivativeData.FDI_StopLoss)
+                FDB Quantity: \(futureDerivativeData.FDB_Qty)
+                FDI Quantity: \(futureDerivativeData.FDI_Qty)
+                FDB Net Profit: \(futureDerivativeData.FDB_NetProfit)
+                FDI Net Profit: \(futureDerivativeData.FDI_NetProfit)
+                Notes: \(futureDerivativeData.notes)
                 """
             }
         } catch {

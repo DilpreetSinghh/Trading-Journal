@@ -22,7 +22,7 @@ struct TradingStyle: View {
                     .foregroundStyle(Color.green)
                     
                     NavigationLink {
-                        Future()
+                        FutureDerivative()
                     } label: {
                         Image(systemName: "f.circle.fill")
                         Text("Future")
@@ -30,7 +30,7 @@ struct TradingStyle: View {
                     .foregroundStyle(Color.blue)
                     
                     NavigationLink {
-                        Option()
+                        OptionDerivative()
                     } label: {
                         Image(systemName: "o.circle.fill")
                         Text("Option")
@@ -38,7 +38,7 @@ struct TradingStyle: View {
                     .foregroundStyle(Color.orange)
                     
                     NavigationLink {
-                        CryptoCurrency()
+                        CryptoCurrencyDerivative()
                     } label: {
                         Image(systemName: "x.circle.fill")
                         Text("CryptoCurrency")
@@ -57,7 +57,7 @@ struct TradingStyle: View {
                     .foregroundStyle(Color.green)
                     
                     NavigationLink {
-                        Future()
+                        FutureDerivative()
                     } label: {
                         Image(systemName: "f.circle.fill")
                         Text("Future")
@@ -65,7 +65,7 @@ struct TradingStyle: View {
                     .foregroundStyle(Color.blue)
                     
                     NavigationLink {
-                        Option()
+                        OptionDerivative()
                     } label: {
                         Image(systemName: "o.circle.fill")
                         Text("Option")
@@ -73,7 +73,7 @@ struct TradingStyle: View {
                     .foregroundStyle(Color.orange)
                     
                     NavigationLink {
-                        CryptoCurrency()
+                        CryptoCurrencyDerivative()
                     } label: {
                         Image(systemName: "x.circle.fill")
                         Text("CryptoCurrency")

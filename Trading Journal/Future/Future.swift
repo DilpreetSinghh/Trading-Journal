@@ -1,5 +1,5 @@
 //
-//  Future.swift
+//  FutureDerivative.swift
 //  Trading Journal
 //
 //  Created by Dilpreet Singh on 24/01/24.
@@ -9,55 +9,51 @@
 import SwiftUI
 
 // Define a data model that conforms to Codable
-struct FutureData: Identifiable, Codable {
+struct FutureDerivativeData: Identifiable, Codable {
     let id: UUID = UUID()
     var selectedDate: Date
     var selectedTime: Date
-    var CDSymbol: String
-    var CDB_TradingType: String
-    var CDI_TradingType: String
-    var CDB_BuyPrice: String
-    var CDI_BuyPrice: String
-    var CDB_SellPrice: String
-    var CDI_SellPrice: String
-    var CDB_StopLoss: String
-    var CDI_StopLoss: String
-    var CDB_Qty: String
-    var CDI_Qty: String
-    var CDB_NetProfit: String
-    var CDI_NetProfit: String
+    var FDSymbol: String
+    var FDB_TradingType: String
+    var FDI_TradingType: String
+    var FDB_BuyPrice: String
+    var FDI_BuyPrice: String
+    var FDB_SellPrice: String
+    var FDI_SellPrice: String
+    var FDB_StopLoss: String
+    var FDI_StopLoss: String
+    var FDB_Qty: String
+    var FDI_Qty: String
+    var FDB_NetProfit: String
+    var FDI_NetProfit: String
     var notes: String
 }
 
-struct CashDerivative: View {
+struct FutureDerivative: View {
     
     // MARK: - State Variables
     
-    // New data model instance
-    @State private var cashDerivativeData = CashDerivativeData(
+    @State private var futureDerivativeData = FutureDerivativeData(
         selectedDate: Date(),
         selectedTime: Date(),
-        CDSymbol: "",
-        CDB_TradingType: "",
-        CDI_TradingType: "",
-        CDB_BuyPrice: "",
-        CDI_BuyPrice: "",
-        CDB_SellPrice: "",
-        CDI_SellPrice: "",
-        CDB_StopLoss: "",
-        CDI_StopLoss: "",
-        CDB_Qty: "",
-        CDI_Qty: "",
-        CDB_NetProfit: "",
-        CDI_NetProfit: "",
+        FDSymbol: "",
+        FDB_TradingType: "",
+        FDI_TradingType: "",
+        FDB_BuyPrice: "",
+        FDI_BuyPrice: "",
+        FDB_SellPrice: "",
+        FDI_SellPrice: "",
+        FDB_StopLoss: "",
+        FDI_StopLoss: "",
+        FDB_Qty: "",
+        FDI_Qty: "",
+        FDB_NetProfit: "",
+        FDI_NetProfit: "",
         notes: ""
     )
     
-    // Show saved notes
-    @State private var showingCDSavedNotes = false
-    
-    // Saved message
-    @State private var cdsavedMessage = ""
+    @State private var showingFDSavedNotes = false
+    @State private var fdsavedMessage = ""
     
     // MARK: - Body
     
@@ -66,141 +62,106 @@ struct CashDerivative: View {
             ScrollView {
                 VStack {
                     
-                    // MARK: - Date and Time Section
-                    
+                    // Date and Time Section
                     Group {
-                        // Date picker for selecting a date
-                        row(view: AnyView(DatePicker("Date", selection: $cashDerivativeData.selectedDate, in: ...Date(), displayedComponents: .date)))
-                        
-                        // Time picker for selecting a time
+                        row(view: AnyView(DatePicker("Date", selection: $futureDerivativeData.selectedDate, in: ...Date(), displayedComponents: .date)))
                         Text("")
-                        row(view: AnyView(DatePicker("Time of Trade", selection: $cashDerivativeData.selectedTime, displayedComponents: .hourAndMinute)))
-                        
-                        // Text field for typing the symbol
+                        row(view: AnyView(DatePicker("Time of Trade", selection: $futureDerivativeData.selectedTime, displayedComponents: .hourAndMinute)))
                         row(view: AnyView(HStack {
                             Text("Symbol")
                                 .foregroundColor(.primary)
-                                .frame(width: 100, alignment: .leading) // Adjust width as needed
-                            TextField("Type symbol of stock here", text: $cashDerivativeData.CDSymbol)
+                                .frame(width: 100, alignment: .leading)
+                            TextField("Type symbol of stock here", text: $futureDerivativeData.FDSymbol)
                         }))
                     }
                     
-                    // MARK: - Trading Details Section
-                    
+                    // Trading Details Section
                     Group {
-                        // Horizontal stack for displaying "Before" and "After" labels
                         row(view: AnyView(HStack {
                             Text("List").frame(maxWidth: .infinity, alignment: .center)
-                                .background(Color.gray.opacity(0.3)) // Background color
-                            
+                                .background(Color.gray.opacity(0.3))
                             Spacer()
                             Spacer()
-                            
                             Text("Planning").frame(maxWidth: .infinity, alignment: .center)
-                                .background(Color.gray.opacity(0.3)) // Background color
+                                .background(Color.gray.opacity(0.3))
                             Spacer()
-                            
                             Text("Implement").frame(maxWidth: .infinity, alignment: .center)
-                                .background(Color.gray.opacity(0.3)) // Background color
+                                .background(Color.gray.opacity(0.3))
                             Spacer()
                         }))
-                        
-                        // Trading type, buy and sell price, stop loss, quantity, and net profit/loss for both Before (B) and After (A)
                         row(view: AnyView(HStack {
                             Text("Type")
-                            TextField("Buy/Sell", text: $cashDerivativeData.CDB_TradingType)
-                            TextField("Buy/Sell", text: $cashDerivativeData.CDI_TradingType)
+                            TextField("Buy/Sell", text: $futureDerivativeData.FDB_TradingType)
+                            TextField("Buy/Sell", text: $futureDerivativeData.FDI_TradingType)
                         }))
-                        
                         row(view: AnyView(HStack {
                             Text("Buy  ")
-                            TextField("Buy Price", text: $cashDerivativeData.CDB_BuyPrice)
-                            TextField("Buy Price", text: $cashDerivativeData.CDI_BuyPrice)
+                            TextField("Buy Price", text: $futureDerivativeData.FDB_BuyPrice)
+                            TextField("Buy Price", text: $futureDerivativeData.FDI_BuyPrice)
                         }))
-                        
                         row(view: AnyView(HStack {
                             Text("Sell  ")
-                            TextField("Sell Price", text: $cashDerivativeData.CDB_SellPrice)
-                            TextField("Sell Price", text: $cashDerivativeData.CDI_SellPrice)
+                            TextField("Sell Price", text: $futureDerivativeData.FDB_SellPrice)
+                            TextField("Sell Price", text: $futureDerivativeData.FDI_SellPrice)
                         }))
-                        
                         row(view: AnyView(HStack {
                             Text("SL   ")
-                            TextField("Stop Loss", text: $cashDerivativeData.CDB_StopLoss)
-                            TextField("Stop Loss", text: $cashDerivativeData.CDI_StopLoss)
+                            TextField("Stop Loss", text: $futureDerivativeData.FDB_StopLoss)
+                            TextField("Stop Loss", text: $futureDerivativeData.FDI_StopLoss)
                         }))
-                        
                         row(view: AnyView(HStack {
                             Text("Qty  ")
-                            TextField("Quantity", text: $cashDerivativeData.CDB_Qty)
-                            TextField("Quantity", text: $cashDerivativeData.CDI_Qty)
+                            TextField("Quantity", text: $futureDerivativeData.FDB_Qty)
+                            TextField("Quantity", text: $futureDerivativeData.FDI_Qty)
                         }))
-                        
                         row(view: AnyView(HStack {
                             Text("Net  ")
-                            TextField("Profit/ Loss", text: $cashDerivativeData.CDB_NetProfit)
-                            TextField("Profit/ Loss", text: $cashDerivativeData.CDI_NetProfit)
+                            TextField("Profit/ Loss", text: $futureDerivativeData.FDB_NetProfit)
+                            TextField("Profit/ Loss", text: $futureDerivativeData.FDI_NetProfit)
                         }))
                     }
                     
-                    // Text editor for notes
+                    // Notes Section
                     VStack(alignment: .leading) {
                         Text("Notes:")
                             .font(.headline)
-                        TextEditor(text: $cashDerivativeData.notes)
+                        TextEditor(text: $futureDerivativeData.notes)
                             .background(Color.gray.opacity(0.1))
                             .cornerRadius(8.0)
                             .frame(minHeight: 100)
                     }
                     
-                    // Save button
+                    // Save and Show Saved Notes Buttons
                     Button("Save") {
-                        cdsaveData()
+                        fdSaveData()
                     }
                     .padding()
                     .foregroundColor(.white)
                     .background(Color.blue)
                     .cornerRadius(8.0)
                     
-                    // Show saved notes button
                     Button("Show Saved Notes") {
-                        showingCDSavedNotes = true
+                        showingFDSavedNotes = true
                     }
                     .padding()
                     .foregroundColor(.white)
                     .background(Color.green)
                     .cornerRadius(8.0)
-                    .sheet(isPresented: $showingCDSavedNotes) {
-                        CDSavedNotes()
+                    .sheet(isPresented: $showingFDSavedNotes) {
+                        FDSavedNotes()
                     }
                     
-                    // Display saved message
-                    Text(cdsavedMessage)
+                    Text(fdsavedMessage)
                         .foregroundColor(.green)
                         .padding()
                 }
                 .padding()
             }
-            .navigationTitle(
-                Text("Cash Derivative")
-            )
-            
-            NavigationLink("Show Saved Notes", destination: CDSavedNotes())
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.green)
-                .cornerRadius(8.0)
-                .fullScreenCover(isPresented: $showingCDSavedNotes) {
-                    CDSavedNotes()
-                }
-            
-            
+            .navigationTitle(Text("Future Derivative"))
         }
     }
     
-    // MARK: - Row Function
-    
-    // Custom row function for creating consistent layout
+    // Custom Row Function
     func row<Content: View>(view: Content) -> some View {
         VStack {
             HStack {
@@ -212,56 +173,37 @@ struct CashDerivative: View {
         }
     }
     
-    // MARK: - Save Data Function
-    
-    func cdsaveData() {
-        // Save the data from text fields to the model
-        cashDerivativeData.CDSymbol = cashDerivativeData.CDSymbol
-        cashDerivativeData.CDB_TradingType = cashDerivativeData.CDB_TradingType
-        cashDerivativeData.CDI_TradingType = cashDerivativeData.CDI_TradingType
-        cashDerivativeData.CDB_BuyPrice = cashDerivativeData.CDB_BuyPrice
-        cashDerivativeData.CDI_BuyPrice = cashDerivativeData.CDI_BuyPrice
-        cashDerivativeData.CDB_SellPrice = cashDerivativeData.CDB_SellPrice
-        cashDerivativeData.CDI_SellPrice = cashDerivativeData.CDI_SellPrice
-        cashDerivativeData.CDB_StopLoss = cashDerivativeData.CDB_StopLoss
-        cashDerivativeData.CDI_StopLoss = cashDerivativeData.CDI_StopLoss
-        cashDerivativeData.CDB_Qty = cashDerivativeData.CDB_Qty
-        cashDerivativeData.CDI_Qty = cashDerivativeData.CDI_Qty
-        cashDerivativeData.CDB_NetProfit = cashDerivativeData.CDB_NetProfit
-        cashDerivativeData.CDI_NetProfit = cashDerivativeData.CDI_NetProfit
-        cashDerivativeData.notes = cashDerivativeData.notes
-        
-        // Save the date and time
-        cashDerivativeData.selectedDate = cashDerivativeData.selectedDate
-        cashDerivativeData.selectedTime = cashDerivativeData.selectedTime
-        
-        // Save the data model to UserDefaults
+    // Save Data Function
+    func fdSaveData() {
         do {
             let encoder = JSONEncoder()
-            let encodedData = try encoder.encode(cashDerivativeData)
-            UserDefaults.standard.set(encodedData, forKey: "cashDerivativeData")
-            cdsavedMessage = "Data Saved!"
+            let encodedData = try encoder.encode(futureDerivativeData)
+            UserDefaults.standard.set(encodedData, forKey: "futureDerivativeData")
+            fdsavedMessage = "Data Saved!"
         } catch {
             print("Error encoding data: \(error.localizedDescription)")
-            cdsavedMessage = "Failed to save data."
+            fdsavedMessage = "Failed to save data."
         }
     }
     
     private func loadSavedNotes() {
         do {
-            if let encodedData = UserDefaults.standard.data(forKey: "cashDerivativeData") {
+            if let encodedData = UserDefaults.standard.data(forKey: "futureDerivativeData") {
                 let decoder = JSONDecoder()
-                let cashDerivativeData = try decoder.decode(CashDerivativeData.self, from: encodedData)
-                
+                let futureDerivativeData = try decoder.decode(FutureDerivativeData.self, from: encodedData)
+                // Use 'futureDerivativeData' as needed
             }
         } catch {
             print("Error loading saved notes: \(error.localizedDescription)")
         }
-        
     }
-    
 }
 
-#Preview {
-    CashDerivative()
+// Preview Section
+#if DEBUG
+struct FutureDerivative_Previews: PreviewProvider {
+    static var previews: some View {
+        FutureDerivative()
+    }
 }
+#endif
